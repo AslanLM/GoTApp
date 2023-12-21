@@ -48,7 +48,7 @@ const CharacterList = () => {
 
       <div className='character-list'>
       {filteredCharacters.length > 0 ? (
-          filteredCharacters.slice(0, 52).map((character) => (
+          filteredCharacters.map((character) => (
             <Character key={character.id} characters={character} />
           ))
         ) : (

@@ -1,85 +1,9 @@
-#landing{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-    background-color: #000;
-}
-
-#landing .layer{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-#landing .layer.bg{
-    background: url(../assets/ladingpageGOTa.jpg);
-    background-position: bottom center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#landing .layer.overlay{
-    background: url(../assets/ladingpagesGOTb.png);
-    background-position: bottom center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#landing .layer.logo{
-    background: url(../assets/GOTlogo.png);
-    background-position: bottom center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 100%; 
-    transform: translateY(20%);
-    transition: 0.5s ease-out;
-}
-
-#landing .layer.bottom{
-    background: url(../assets/GOTbottom.png);
-    background-position: bottom center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 100;
-}
-
-#landing .layer.scrolldown{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 200px;
-    width: 100%;
-    transform: translateY(280%);
-}
-
-.scrolldown h1{
-    font-size: 2.5rem;
-}
-
-.scrolldown svg{
-    animation: scroll 2s ease-in-out infinite;
-}
-
-@keyframes scroll {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-  }
-
-
 
 #container{
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
     padding-bottom: 80px;
     z-index: 100;
 }
@@ -121,16 +45,22 @@
 #footer{
     flex-shrink: 0;
     width: 100%;
-    background-color: var(--black);
     color: var(--font-color);
-    padding: 20px;
+    padding-top: 20px;
     text-align: center;
-    border-top: 1px solid var(--white);
   }
+
+.img-container-footer{
+    height: 182px;
+    width: 100%;
+    background: url(../assets/GOTbottom.png);
+}
   
 .footer-content{
     display: flex;
     justify-content: space-between;
+    background-color: var(--black);
+    padding: 30px;
 }
 
 .footer-content a{
@@ -163,8 +93,7 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
-  /* Media query para tamaños de pantalla aún más pequeños */
+
   @media (max-width: 680px) {
     #landing .layer.logo{
         height: 160px;

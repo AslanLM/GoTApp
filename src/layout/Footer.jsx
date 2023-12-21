@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer id="footer">
+      <div className='img-container-footer'></div>  
       <div className="footer-content">
         <p>Valar Morghulis, Valar Dohaeris 🐲</p> {/* ⚔️🏰 */}
         <p>
