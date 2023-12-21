@@ -1,0 +1,150 @@
+#search{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.searchBox {
+    background: var(--white);
+    height: auto;
+    border-radius: 40px;
+    padding: 2px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: var(--bg-second);
+  color : var(--white);
+}
+
+.searchButton {
+    color: var(--font-color);
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: var(--black);
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+}
+}
+
+
+#characters{
+    height: 240px;
+    width: 280px;
+    border-radius: 18px;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.ch-img{
+    height: 240px;
+    width: 280px;
+    transition: transform 0.3s ease; 
+}
+
+.ch-container{
+    height: 40px;
+    width: 280px;
+    padding: 8px;
+    padding-left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 4px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    color: var(--font-color);
+    transition: all 0.5s ease;
+}
+
+
+.ch-container h2{
+    font-family: 'PTSerif', serif;
+    position: relative;
+    padding-bottom: 4px;
+    z-index: 10;
+    
+}
+
+.ch-container span{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.ch-container p{
+    position: relative;
+    opacity: 0;
+    z-index: 10;
+}
+
+#characters:hover{
+    background-color: transparent;
+}
+
+#characters:hover .ch-img{
+    transform: scale(1.1);   
+}
+
+
+#characters:hover .ch-container{
+    height: 95px;
+    bottom: -10px;
+    background-color: transparent;
+}
+
+#characters:hover .ch-container svg{
+    transform: translateY(-48px);
+}
+
+#characters:hover .ch-container p{
+    opacity: 1;
+}
+
+
+.clip-path{
+    position: absolute;
+    background-color:  rgba(31, 69, 78, 0.8);
+    height: 280px;
+    width: 280px;
+    clip-path: ellipse(4% 4% at 85% 80%);
+    z-index: 5;
+    transition: clip-path 0.5s ease;
+}
+
+#characters:hover .clip-path{
+    clip-path: ellipse(90% 30% at 74% 78%);
+}
+
+
