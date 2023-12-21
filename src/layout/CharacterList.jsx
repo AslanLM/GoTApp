@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Character from '../components/Character';
 import './Layout.css'
 import Search from '../components/Search';
+import Pagination from '../components/Pagination';
 
 const CharacterList = () => {
 
     const [characters, setCharacters] = useState([])
     const [filteredCharacters, setFilteredCharacters] = useState([]);
+
     const [loading, setLoading] = useState(true)
 
+    const [currentPage, setCurrentPage] = useState(1);
+  
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -18,7 +22,7 @@ const CharacterList = () => {
           setCharacters(data)
           setFilteredCharacters(data)
         } catch (error) {
-          console.error('Error al obtener datos:', error);
+          console.error('Error getting datex:', error);
         }
       };
     
@@ -28,6 +32,7 @@ const CharacterList = () => {
 
     const handleSearch = (filteredResults) => {
       setFilteredCharacters(filteredResults);
+      
     }; 
 
     if(loading){
@@ -38,21 +43,31 @@ const CharacterList = () => {
       )
     }
 
+    const itemsPages = 20;
+
+    const lastItem = currentPage * itemsPages;
+    const firstItem = lastItem - itemsPages;
+    const currentItems = filteredCharacters.slice(firstItem, lastItem);
+
 
   return (
     <div id='container'>
       <div className='img-container'></div>
-      <h1>Characters</h1>
+       <h1>Characters</h1>
 
-      <Search  characters={characters}  onSearch={handleSearch}/>
+      <div className='navbar'>
+        <Search  characters={characters}  setFilteredCharacters={handleSearch} setCurrentPage={setCurrentPage}/>
+
+        <Pagination totalItems={filteredCharacters.length} itemsPages={itemsPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+      </div>
 
       <div className='character-list'>
       {filteredCharacters.length > 0 ? (
-          filteredCharacters.map((character) => (
+          currentItems.map((character) => (
             <Character key={character.id} characters={character} />
           ))
         ) : (
-          characters.slice(0, 52).map((character) => (
+          characters.map((character) => (
             <Character key={character.id} characters={character} />
           ))
         )}

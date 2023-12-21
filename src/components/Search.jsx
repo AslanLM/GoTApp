@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import './Components.css'
 
-const Search = ({characters, onSearch }) => {
+const Search = ({characters, setFilteredCharacters, setCurrentPage }) => {
 
   const [query, setQuery] = useState('')
 
@@ -10,15 +9,15 @@ const Search = ({characters, onSearch }) => {
     setQuery(valueQuery);
 
     if(valueQuery === ''){
-      onSearch(characters)
+      setFilteredCharacters(characters)
     }else{
       const filtered = characters.filter(
-        (character) =>
-          character.fullName.toLowerCase().includes(query)
+        (character) => character.fullName.toLowerCase().includes(query)
       );
   
-      onSearch(filtered);
+      setFilteredCharacters(filtered);
     }  
+    setCurrentPage(1);
   };
 
 

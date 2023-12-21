@@ -3,13 +3,13 @@ import React from "react";
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className='img-container-footer'></div>  
+      <div className='img-container img-footer'></div>  
       <div className="footer-content">
         <p>Valar Morghulis, Valar Dohaeris 🐲</p> {/* ⚔️🏰 */}
         <p>
           © 2023 Game of Thrones Web App by:{" "}
           <a
-            href="https://github.com/AslanLM"
+            href="https://github.com/AslanLM/GoTApp"
             target="_blank"
             rel="noopener noreferrer"
           >
