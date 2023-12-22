@@ -14,6 +14,6 @@ This project is a web application developed in React that displays information a
 The application uses the ThronesAPI to fetch character information. [ThronesAPI](https://thronesapi.com/)
 
 ## Autor
--AslanLM
+-AslanLM 
 
 
