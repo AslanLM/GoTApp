@@ -5,15 +5,15 @@ This project is a web application developed in React that displays information a
 
 ## Features
 
--List of Game of Thrones characters.
--Search bar to filter characters.
--Pagination to display 20 characters per page.
--Details for each character, including name, title, and house.
+- List of Game of Thrones characters.
+- Search bar to filter characters.
+- Pagination to display 20 characters per page.
+- Details for each character, including name, title, and house.
 
 ## Api
 The application uses the ThronesAPI to fetch character information. [ThronesAPI](https://thronesapi.com/)
 
-## Autor
--AslanLM 
+## Author
+AslanLM 
 
 
