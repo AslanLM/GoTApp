@@ -35,10 +35,16 @@
     gap: 42px;
 }
 
+.pagination-bottom{
+  display: none;
+}
+
+
+
 
 .loading{
     flex: 1;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +87,13 @@
 @media (max-width: 946px){
     .character-list{
         grid-template-columns: repeat(2, 1fr);
+    }
+    .pagination-bottom{
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 50px;
+      width: 80%;
+
     }
 }
 

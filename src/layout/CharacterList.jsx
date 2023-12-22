@@ -54,7 +54,6 @@ const CharacterList = () => {
     <div id='container'>
       <div className='img-container'></div>
        <h1>Characters</h1>
-
       <div className='navbar'>
         <Search  characters={characters}  setFilteredCharacters={handleSearch} setCurrentPage={setCurrentPage}/>
 
@@ -71,6 +70,9 @@ const CharacterList = () => {
             <Character key={character.id} characters={character} />
           ))
         )}
+      </div>
+      <div className='pagination-bottom'>
+        <Pagination totalItems={filteredCharacters.length} itemsPages={itemsPages} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       </div>
     </div>
   )

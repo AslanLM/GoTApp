@@ -140,11 +140,18 @@
 
 }
 
-@media screen and (max-width: 620px) {
-.searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
+@media screen and (max-width: 708px) {
+    .searchBox:hover > .searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
 }
+
+@media screen and (max-width: 486px) {
+    .searchBox:hover > .searchInput {
+        width: 100px;
+        padding: 0 6px;
+    }
 }
 
 #pagination{
